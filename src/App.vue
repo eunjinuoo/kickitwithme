@@ -6,7 +6,7 @@
             :navigate-to="goPage"
             :touchDrag="false"
             :mouseDrag="false"
-            >
+        >
             <slide class="section start">
                 <h3 @click="goContent()">- 은진이에게</h3>
             </slide>
@@ -16,34 +16,66 @@
                     <div class="controler">
                         <div class="control-wrap">
                             <ul>
-                                <li v-for="(item, idx) in list" :key="idx" @click="goDay(idx)">
-                                    <span>{{item.during}}</span>
+                                <li
+                                    v-for="(item, idx) in list"
+                                    :key="idx"
+                                    @click="goDay(idx)"
+                                >
+                                    <span>{{ item.during }}</span>
                                 </li>
                             </ul>
                         </div>
                         <div class="page-gauge">
-                            <div class="gauge" :style="{width: gauge + '%'}"></div>
+                            <div
+                                class="gauge"
+                                :style="{ width: gauge + '%' }"
+                            ></div>
                         </div>
                     </div>
                     <span @click="goTop()" class="go-btn top-btn"></span>
                     <span @click="goBottom()" class="go-btn bottom-btn"></span>
                     <ul ref="ulHeight">
-                        <li v-for="(item, idx) in list" :key="idx" :class="{ active: idx === isToggle }" ref="forList" @click="toggleOn(idx)">
+                        <li
+                            v-for="(item, idx) in list"
+                            :key="idx"
+                            :class="{ active: idx === isToggle }"
+                            ref="forList"
+                            @click="toggleOn(idx)"
+                        >
                             <div class="list-wrap">
                                 <div class="title-wrap">
                                     <h1 class="date">2021.{{ item.date }}</h1>
-                                    <strong class="during">{{ item.during }}일</strong>
+                                    <strong class="during"
+                                        >{{ item.during }}일</strong
+                                    >
                                 </div>
                                 <div class="content-wrap">
-                                    <div class="img-wrap" v-if="item.imgList.length">
+                                    <div
+                                        class="img-wrap"
+                                        v-if="item.imgList.length"
+                                    >
                                         <ul>
-                                            <li v-for="(imgArry, idx) in item.imgList" :key="idx">
-                                                <img :src="'img/' + imgArry.img + '.png'" alt="은진이와 함께 한 날"/>
+                                            <li
+                                                v-for="(
+                                                    imgArry, idx
+                                                ) in item.imgList"
+                                                :key="idx"
+                                            >
+                                                <img
+                                                    :src="
+                                                        'img/' +
+                                                        imgArry.img +
+                                                        '.png'
+                                                    "
+                                                    alt="은진이와 함께 한 날"
+                                                />
                                             </li>
                                         </ul>
                                     </div>
                                     <pre class="text" v-html="item.text"></pre>
-                                    <p @click="goEnd()" class="end-point">- 지우</p>
+                                    <p @click="goEnd()" class="end-point">
+                                        - 지우
+                                    </p>
                                 </div>
                             </div>
                         </li>
@@ -132,10 +164,7 @@ export default {
                 {
                     date: "04.22(목)",
                     during: "7",
-                    imgList: [
-                        { img: "7" },
-                        { img: "7-1" }
-                    ],
+                    imgList: [{ img: "7" }, { img: "7-1" }],
                     text: `소란이 있고 난 후 수리완료된 차를 가지고 은진이랑 집에 와서 김치찌개와 계란말이를 해먹었다 그리고 호스텔3라는 영화를 보고 이야기 나누다가 은진이 볼에 뽀뽀했다<br>너무 사랑스럽다..`
                 },
                 {
@@ -168,11 +197,7 @@ export default {
                 {
                     date: "05.01(토)",
                     during: "16",
-                    imgList: [
-                        { img: "16" },
-                        { img: "16-1" },
-                        { img: "16-2" }
-                    ],
+                    imgList: [{ img: "16" }, { img: "16-1" }, { img: "16-2" }],
                     text: `은진이랑 을왕리 해수욕장에 가서 해물칼국수도 먹고 바다도 보고 이야기도 많이 나눴다 집에 돌아와서 한숨 자고 일어나서 엽떡 로제떡볶이도 먹고 은진이가 자고간다고했는데 긴바지가 없어서 새벽에 동대문이 문을 연다고 하길래 바지사러 동대문 갔다가 00년대로 타임머신을 탔다 놀라울정도의 너무 옛날 스타일과 무인요구르트 판매카트에는 왠 클럽노래가 흘러나오고 있었다
                     개중 압권은 헬로키티에 비즈자수가 박혀있는 티셔츠.. 진짜 재밌었다 바지를 사려고하니 주인이 없어 전화하니까 계좌이체하고 알아서 물건 가져가란다ㅋㅋ 집에와서 그루지 영화를 보다가 같이 잤다 자고일어나서 그.. 음.. 그 스킨쉽을 하게 됬는데 은진이가 “지우라면 날 만져도 좋아”라고 해주었다
                     너무나도 고마웠고 잘해주지도 못한것같은데 신뢰를 해주니까 너무너무 고맙고 미안했다
@@ -182,9 +207,7 @@ export default {
                 {
                     date: "05.04(화)",
                     during: "19",
-                    imgList: [
-                        { img: "19" }
-                    ],
+                    imgList: [{ img: "19" }],
                     text: `전날 저녁에 친구를 만나서 이런저런 과거이야기를 하다보니 너무 우울해져있었는데 그냥 괜찮은척 하려했는데 은진이는 신경이 많이 쓰였나보다
                     몰래 나와서 계단에서 카트하고있는데 은진이가 나와서 꼬옥 안아줬다
                     마음이 너무 따뜻했다
@@ -200,11 +223,7 @@ export default {
                 {
                     date: "05.05(수)",
                     during: "20",
-                    imgList: [
-                        { img: "20" },
-                        { img: "20-1" },
-                        { img: "20-2" }
-                    ],
+                    imgList: [{ img: "20" }, { img: "20-1" }, { img: "20-2" }],
                     text: `오늘은 어린이날
                     은진이랑 수원 기흥에 있는 아쿠아가든 수족관에 다녀왔다 이것저것 구경하고 물고기 설명도 해주고 돌아오니 저녁 9시가 되었는데 은진이랑 헤어지기 싫어서 같이 있다가
                     모텔에 가게 됬다
@@ -228,10 +247,7 @@ export default {
                 {
                     date: "05.08(토)",
                     during: "23",
-                    imgList: [
-                        { img: "23" },
-                        { img: "23-1" }
-                    ],
+                    imgList: [{ img: "23" }, { img: "23-1" }],
                     text: `오늘은 은진이가 푹 자고 있으면 알아서 집에 찾아온다고해서 알람도 안맞추고 그냥 푹 자고 있었다 근데 은진이는 깜빡잊고 지우 왜 오늘 연락도 없고 점심때까지도 자고있냐고 서운하다고 그랬다..ㅋㅋㅋ 근데 어제 너무 피곤해서 퇴근하고 빨래 돌려놓고 잠들어버려서 은진이가 친구랑 술마시는데 걱정도 안되냐구 연락도 안하냐구 서운하다 그랬는데..
                     그래서 얼른 준비하고 은진이 만나러 서둘러 나갔다 근데 역대급으로 차가 막혔다 은진이네 집까지 1시간이나 걸려서 도착했으니..
                     은진이랑 우리집에 가면서 피자 주문해놓고 집에와서 먹고나니 노곤노곤 카트도 하고 vr게임도하고 은진이가 졸려하길래 낮잠 재워놓고 장봐와서 저녁 준비를 했다
@@ -277,9 +293,7 @@ export default {
                 {
                     date: "05.12(수)",
                     during: "27",
-                    imgList: [
-                        { img: "27" }
-                    ],
+                    imgList: [{ img: "27" }],
                     text: `오늘도 어김없이 은진이를 데려다주는 퇴근길 같이 저녁이나 먹을까 하고 쭈꾸미집을 들어갔는데 아저씨가 쭈꾸미에 진심이다
                     끓고 30초! 무조건이야!
                     맞은편 쭈꾸미집과 다르게 이곳은 만석
@@ -312,11 +326,7 @@ export default {
                 {
                     date: "05.14(금)",
                     during: "29",
-                    imgList: [
-                        { img: "29" },
-                        { img: "29-1" },
-                        { img: "29-2" },
-                    ],
+                    imgList: [{ img: "29" }, { img: "29-1" }, { img: "29-2" }],
                     text: `오늘은 어제 허무하게 집을 가고나서 저녁늦게까지 연락한통 없는 은진이를 기다리다가 결국 터져버렸다
                     좋아한다는 마음에 내가 강요를 한건 아닌지.. 그치만 너무 서럽고 서운했다
                     그래서 나도 하루종일 연락도 안하고 집에 혼자 가버렸다 집에 돌아와서 바질을 심는데 “이것도 은진이 파스타해주려고 심는 바질인데..” 생각을 하니까 너무 서러웠다
@@ -328,11 +338,7 @@ export default {
                 {
                     date: "05.15(토)",
                     during: "30",
-                    imgList: [
-                        { img: "30" },
-                        { img: "30-1" },
-                        { img: "30-2" }
-                    ],
+                    imgList: [{ img: "30" }, { img: "30-1" }, { img: "30-2" }],
                     text: `어제의 일이 있고 은진이가 자고간다고하고 함께 밤을 보냈다..
                     그리고 그.. 그랬다..;;
                     너무 부드럽고.. 좋았다..
@@ -426,10 +432,7 @@ export default {
                 {
                     date: "05.19(수)",
                     during: "34",
-                    imgList: [
-                        { img: "34" },
-                        { img: "34-1" }
-                    ],
+                    imgList: [{ img: "34" }, { img: "34-1" }],
                     text: `오늘은 부처님오신날
                     어제 은진이를 데려다주고 집에 돌아오니 새벽3시 하루종일 자다가 3시즈음에 일어났다
                     6시에 만나기로하고 꽃집에 들러 꽃도사고
@@ -454,10 +457,7 @@ export default {
                 {
                     date: "05.22(토)",
                     during: "37",
-                    imgList: [
-                        { img: "37" },
-                        { img: "37-1" }
-                    ],
+                    imgList: [{ img: "37" }, { img: "37-1" }],
                     text: `어제 저녁 12시가 다 되어갈 즈음 은진이가 보고싶어서 전화를 했다가 은진이도 보고싶다고 그래서 바로 만나러 가서 심야데이트를 했다 서서울호수공원을 가서 한적하게 산책하며 이러저러 이야기를 하고 은진이가 용기내서 자기가 입장을 바꿔서 생각을 해봤는데 나한테 너무 미안하다고 그랬다
                     평소에 집에 데려다주고 같이 소소한 이야기하고 밥먹고 이런 시간들이 당연하게 느껴지다가 내가 일이 바빠져서 그런걸 못하게되니까 허전함도 느껴지도 생각을 해보니까 개인적인 시간을 보내자고 했던게 미안하게 느껴졌나보다 바보
                     나는 서운함보다는 오히려 은진이가 나를 생각해준다는게 너무 고마워서 감동이였는걸..
@@ -481,11 +481,7 @@ export default {
                 {
                     date: "05.23(일)",
                     during: "38",
-                    imgList: [
-                        { img: "38" },
-                        { img: "38-1" },
-                        { img: "38-2" }
-                    ],
+                    imgList: [{ img: "38" }, { img: "38-1" }, { img: "38-2" }],
                     text: `어제 저녁 원사장이 놀러오고 뭐.. 이런저런 이야기를 하다가 잠들고 아침에 일어나니 11시반 즈음이였나.. 은진이 카톡이 와있는걸 보고 바로 전화해보고 1시까지 보러가겠다고하고 약국에 가서 혈액순환이 잘돌게 해준다는 링거액을 4일분을 또 샀다
                     은진이의 매직데이가 시작될 타이밍이기 때문이다 은진이는 전조증상으로 두통이 온다고하는데 많이 아프진않을까 걱정이다
                     나는 경험해본적이 없는 아픔이라 공감이 제대로 안되서 어떻게 대해줘야 아픔이 덜 할지 모르겠어서 이게 참 고민이다
@@ -550,9 +546,7 @@ export default {
                 {
                     date: "05.26(수)",
                     during: "41",
-                    imgList: [
-                        { img: "41" }
-                    ],
+                    imgList: [{ img: "41" }],
                     text: `일이 바빠서 매일 야근하느라 은진이를 사무실에서 잠깐 5분 보는게 전부다
                     어제는 12시 퇴근.. 오늘은 10시 퇴근…
                     얼굴이라도 마음편히 보고싶은데..
@@ -601,11 +595,7 @@ export default {
                 {
                     date: "05.30(일)",
                     during: "45",
-                    imgList: [
-                        { img: "45" },
-                        { img: "45-1" },
-                        { img: "45-2" }
-                    ],
+                    imgList: [{ img: "45" }, { img: "45-1" }, { img: "45-2" }],
                     text: `토요일 1시에 일어나자마자 트랙패드를 사려고 출발했다 하지만 타임스퀘어는 무한 줄서기 지옥이였고 3시나 되서야 지하주차장에 들어갈수 있었다 근데 더 서러운건 그렇게 도착했지만 재고가 없다는거.. 강서권 a-store에 전부 전화를 해보고 목동 이마트에는 재고가 있다고했다 그렇게 어찌저찌 트랙패드를 사고 나니 저녁 5시.. 은진이네 집에 갔다가 우리집으로 가니 벌써 6시.. 하루가 그렇게 증발해버렸다 집에 가는길에 마트에 들려서 저녁에 부침개에 막걸리를 한잔 하기로 했다 이것저것 장을 보고 은진이는 갑자기 사라졌다가 나타나더니 양손에 감자과자 하나씩 쥐고 나타났다 귀여워..
                     집에 오자마자 물건 정리 좀 하고..보니 은진이가 잠들었다 새근새근 자는 모습이 너무 귀엽다 뽀뽀도 하고 쓰담쓰담 좀 하다가 양파가 없길래 아이스크림도 살겸 집앞 마트에 얼른 다녀왔다 그렇게 음식 준비를 다 마치고 은진이를 깨우니 비몽사몽 헤롱헤롱
                     은진이는 바삭한 식감을 좋아하나보다
@@ -655,9 +645,7 @@ export default {
                 {
                     date: "06.03(목)",
                     during: "49",
-                    imgList: [
-                        { img: "49" }
-                    ],
+                    imgList: [{ img: "49" }],
                     text: `집에 돌아오는길에 마트에 들려서 황태,콩나물,계란,두부를 샀다
                     집에 오니 은진이가 고개만 빼꼼! 으앙 귀여워 아직도 속이 안좋다길래 일단 쉬고있어 얼른 밥해줄게 황태 먼저 물에 불려놓고 재료손질하고 준비를 하니 은진이가 뒤에 와서 나를 지긋이 안았다
                     하루종일 심심하진 않았을까 많이 아팠을까
@@ -676,7 +664,7 @@ export default {
                         { img: "51" },
                         { img: "51-1" },
                         { img: "51-2" },
-                        { img: "51-3" },
+                        { img: "51-3" }
                     ],
                     text: `금요일엔 퇴근하고 형들이랑 이러저러 대화를 나누고 토요일에 은진이가 아침에 찾아온다고 했다 저녁에 코드를 치다가 전날도 밤을 새서 잠들어버렸는데 아침에 일찍 눈 떠서 새코드를 작성했다 그러고 잠시 또 잠들었다가 일어나서 코드를 치고있는데 누가 집에 들어왔는데 은진이였다! 친구나 아빠인줄 알았는데 은진이라니이이이이 너무 조아
                     그렇게 둘이 잠시 누워서 있다가.. 사랑했다
@@ -701,9 +689,7 @@ export default {
                 {
                     date: "06.07(월)",
                     during: "53",
-                    imgList: [
-                        { img: "53" }
-                    ],
+                    imgList: [{ img: "53" }],
                     text: `일요일에 밤새 일하고 하루종일 졸려서 뇌가 수시로 꺼지는 하루였다 오늘은 일단 퇴근하고 집에가서 작업하다가 그대로 잠들 생각으로 칼퇴하고 은진이를 집에 데려다 주기로했다 은진이랑 같이 있고싶어서 은진이보고 우리집에서 같이 자고 다음날 같이 출근하자고 그랬는데 가만히 생각해보면 내가 자꾸 은진이를 외박시킬때마다 은진이네 부모님한테 감점당하는건데.. 아무래도 안되겠다 싶어서 집에 데려다주고 집에서 쉬라고 나는 그냥 집에 데려다 준걸로 만족한다고 그랬다
                     그러니까 은진이가 짐만 챙기고 지우네서 자기로 했잖아!! 으앙 그러고 안기는데 아이 참.. 이 모습이 또 마냥 귀엽네.. 그렇게 결국.. 은진이랑 집에 돌아오기로 했다.. ㅋ..
                     은진이가 택시를 불렀다고 그래서 택시타고 집에 오는길에 나는 은진이 무릎에서 잠들어버렸고 눈을 떠보니 개봉동이였다 일단은 은진이 밥부터 먹여야겠다 싶어서 집앞 설렁탕집에 갔다 식사내내 나는 설렁탕의 유래와 기원에 대해서, 당시 시대배경상의 음식문화에 대해서 이야기하면서 식사를 마치고 집에 와서 샤워부터 한뒤 다시 키보드를 잡았다
@@ -714,11 +700,7 @@ export default {
                 {
                     date: "06.10(목)",
                     during: "56",
-                    imgList: [
-                        { img: "56" },
-                        { img: "56-1" },
-                        { img: "56-2" },
-                    ],
+                    imgList: [{ img: "56" }, { img: "56-1" }, { img: "56-2" }],
                     text: `요즘 일이 바빠서 퇴근도 같이 못하고 일하느라 연락도 잘 못하고.. 왜냐면 야근하고있으니까.. 그러다 오늘은 그냥 집에서 일하려고 일찍 퇴근했다 그래서 은진이랑 오랜만에 대화하다가 구피가 새끼낳았다고 두마리 건졌다고 그래서 요령을 알려줬다 말이 나온김에 나도 치어항에 수류가 안도는것 같은데 그거 때문에 치어들이 하루씩 죽어나가나 싶어서 치어들을 모두 본항에 풀어주기로 결심했다
                     그러니 은진이가 정말 지우네는 야생 그 자체구나.. 약육강식이야 은지나 그러다가 원사장이 집에 찾아와서 한동안 민철이 이야기가 오고갔다 그러다가 원사장을 집에 데려다주고 문득 아 마따 은진이 답장 기다릴텐데 싶어서 확인해보니 이미 잔다고 카톡이 와있었다
                     그래서 은진이 입장에서는 내가 잠들었나 싶었을텐데 잠들면 잠든다고 카톡 하나만 남겨달라고 항상 말해왔었는데 되게 서운했겠다 싶었다 그래가지고 사실 나는 잠든게 아니였다 겸 집에 잘 들어갔다는걸 알려줄겸 걱정할수도있으니까.. 집에 돌아가는 길을 사진찍어서 보냈다 근데 그 와중에 도로 사진이 너무 예쁘게 찍혀서 마음에 들었다
@@ -734,9 +716,7 @@ export default {
                 {
                     date: "06.11(금)",
                     during: "57",
-                    imgList: [
-                        { img: "57" }
-                    ],
+                    imgList: [{ img: "57" }],
                     text: `오늘은 금요일! 어차피 야근해도 집에서 해야만 하는날! 그래서 칼퇴했다
                     은진이보고 퇴근하면 우리집에 놀러가자고 꼬셨다 오늘 하루종일 은진이 생일선물을 뭘 해줘야 하나 고민하며 시간을 보냈다
                     차장님이나 과장님한테도 여쭤보고
@@ -793,7 +773,7 @@ export default {
                         { img: "58-1" },
                         { img: "58-2" },
                         { img: "58-3" },
-                        { img: "58-4" },
+                        { img: "58-4" }
                     ],
                     text: `오늘은 토요일이지만 반스 오픈하는날이라 저녁에 은진이가 출근을 해야한다
                     그래서 저녁에 회사에 데려다 줘야지 생각하고있었다 오후 느즈막히 일어나서 나는 다시 코드를 잡으려고 노력했고.. 간간히 은진이랑 카톡을 나눴다 은진이가 이번엔 다른 테스트 있다고 해보라고 링크를 보냈는데 예전에 연애초기에 했었던 mbti테스트의 다른 버전이였다 이번엔 enfp가 아니라 infp가 나왔다 결과는 거의 나 본인수준.. 그러다 은진이가 택시를 타고 왔다 나랑 전화하면서 밖에 덥다고 했더니 기사님이 창문을 닫고 에어컨을 틀으셨다고한다 나도 은진이가 덥다고 그래서 집에 오면 시원하라고 에어컨 틀어놨다ㅋㅋ 집에 도착한 은진이랑 오늘도 꽁냥꽁냥 거리다가 출근해야할 시간이 되서 사무실에 데려다줬다 회사건물앞에서 꼬옥 껴안고있었는데 승희대리님처럼 보이는 분이 회사 건물로 들어갔다 아 큰일이다 걸렸다. ㅋㅋㅋ
@@ -807,10 +787,7 @@ export default {
                 {
                     date: "06.14(월)",
                     during: "60",
-                    imgList: [
-                        { img: "60" },
-                        { img: "60-1" }
-                    ],
+                    imgList: [{ img: "60" }, { img: "60-1" }],
                     text: `어차피 집가서도 쳐야하는 코드이기에 그냥 일찍퇴근하고 집가서 치자 싶은 마음이 들었다 은진이한테 카톡으로 “같이 집에 갈까? 그냥 손잡고 싶어서”라고했다
                     그러니 “가자”를 한가득 외친다 귀여워ㅠ
                     집에가면 헤어져야하는걸 이제 몸으로 깨우친 내새끼, 배고프데 밥먹고 가래
@@ -839,10 +816,7 @@ export default {
                 {
                     date: "06.15(화)",
                     during: "61",
-                    imgList: [
-                        { img: "61" },
-                        { img: "61-1" }
-                    ],
+                    imgList: [{ img: "61" }, { img: "61-1" }],
                     text: `오늘은 아침에 늦잠자고 일어났는데 단수.. 씻지도 못하고 출근하고 하루종일 헤롱헤롱거렸다 점심에는 은진이가 피부과에 간다고해서 같이 갔다가 점심으로 쌀국수를 먹었다 퇴근하고 은진이보고 우리집에 놀러갈래?라고 물었다 은진이는 집에가요 오빠..ㅋㅋㅋ 아 증말 오빠 너무 많이 써먹는거 아니냐구
                     우리동네에 도착해서 은진이가 배고프데
                     뭔가가 있다 또
@@ -899,11 +873,7 @@ export default {
                 {
                     date: "06.17(목)",
                     during: "63",
-                    imgList: [
-                        { img: "63" },
-                        { img: "63-1" },
-                        { img: "63-2" }
-                    ],
+                    imgList: [{ img: "63" }, { img: "63-1" }, { img: "63-2" }],
                     text: `퇴근하고 은진이를 집에 데려다주려고하는데 은진이가 우리집에 가도 되냐고 그랬다 당연히! 은진이 is 뭔들 그렇게 집에 들어가다가 신도림에서 피자먹고 갈래? 거기 내가 좋아하는 피자집 있는데.. 토마토 소스가 맛이 진한 신도림의 아씨펍을 평소부터 은진이와 함께 가고싶었었다
                     그렇게 도착하자마자 모든맛의 피자를 종류별로 조각으로 시켰고 피자가 나오는동안 둘이서 카트라이더를 했다 오늘 회사에서 어땠는지~ 은진이랑 이런이런거 해보고싶었는데~ 이건 무슨맛이였어? 어떤 느낌이였어? 소소한 스몰토크를 하다가 피자맛에 대해서 한줄평을 남겨달라고 했다
 
@@ -1035,11 +1005,7 @@ export default {
                 {
                     date: "06.21(월)",
                     during: "67",
-                    imgList: [
-                        { img: "67" },
-                        { img: "67-1" },
-                        { img: "67-2" },
-                    ],
+                    imgList: [{ img: "67" }, { img: "67-1" }, { img: "67-2" }],
                     text: `월요일은 그렇잖아 솔직히..
                     야근 할 맛이 나겠냐고..
                     라는 핑계로 은진이랑 같이 퇴근해따
@@ -1061,11 +1027,7 @@ export default {
                 {
                     date: "06.23(수)",
                     during: "69",
-                    imgList: [
-                        { img: "69" },
-                        { img: "69-1" },
-                        { img: "69-2" }
-                    ],
+                    imgList: [{ img: "69" }, { img: "69-1" }, { img: "69-2" }],
                     text: `오늘은 하루종일 날씨도 이상한 하루였다
                     동남아 날씨가 되간다는데 진짜 갑자기 소나기가 내리더니 해가 또 쨍쨍
                     하늘은 반쪽이 비가 오고 반쪽은 해가 맑은 하루였다 퇴근시간에 다들 세준차장님 송별회 해드린다고 먼저 퇴근들 하시고 일찍 마무리 하는 분위기라서 오늘은 나도 7시에 일찍 퇴근을 했다 은진이도 조금 더 남는다고 그런김에 같이 퇴근하자고 졸라서 같이 퇴근하다가 집가는길에 우리 문래동 다시 가볼래? 하고 문래역에서 내려서 설렁설렁 걸으면서 구경했다 밥을 먹으려고했던 집은 문을 닫았고
@@ -1297,11 +1259,7 @@ export default {
                 {
                     date: "07.06(화)",
                     during: "82",
-                    imgList: [
-                        { img: "82" },
-                        { img: "82-1" },
-                        { img: "82-2" }
-                    ],
+                    imgList: [{ img: "82" }, { img: "82-1" }, { img: "82-2" }],
                     text: `주말 내내 느꼈던 느낌이 계속 기억이 났다
                     자꾸 은진이를 덮치는 생각을 했다 큰일이다
                     근데 일할때 집중이 너무 잘되서 오늘 일을 상당히 진척시켰다 그치만 그만큼 집에 늦게 들어갔는데 집에 가보니 은진이가 냄비손잡이랑 받침대, 수세미를 사서 보냈다
@@ -1326,9 +1284,7 @@ export default {
                 {
                     date: "07.09(금)",
                     during: "85",
-                    imgList: [
-                        { img: "85" }
-                    ],
+                    imgList: [{ img: "85" }],
                     text: `은진이가 갑자기 연락이 뚝 끊겼다
                     목요일에 서운하다고 그러더니 밉다며 답장도 안하고 연락도 안된다
                     갑자기 그래서 뭐지 무슨일이지..
@@ -1343,10 +1299,7 @@ export default {
                 {
                     date: "07.10(토)",
                     during: "86",
-                    imgList: [
-                        { img: "86" },
-                        { img: "86-1" }
-                    ],
+                    imgList: [{ img: "86" }, { img: "86-1" }],
                     text: `연락이 없는 은진이를 그냥 기다리다가 늦게 잠들었다 한참 자고 있었는데 누가 문을 열고 들어와서 깼다
                     아빤가.. 원사장인가… 형인가…
                     바깥사람 냄새가 났다
@@ -1374,10 +1327,7 @@ export default {
                 {
                     date: "07.11(일)",
                     during: "87",
-                    imgList: [
-                        { img: "87" },
-                        { img: "87-1" }
-                    ],
+                    imgList: [{ img: "87" }, { img: "87-1" }],
                     text: `오늘 여행가자고 해놓고 오후 3시나 되서 눈을 떳다
                     망했다
                     은진이한테 바로 전화를 했더니 많이 실망한 목소리다
@@ -1407,9 +1357,7 @@ export default {
                 {
                     date: "07.13(화)",
                     during: "89",
-                    imgList: [
-                        { img: "89" }
-                    ],
+                    imgList: [{ img: "89" }],
                     text: `하.. 오늘도 정신없는 개발의 하루였다..
                     요즘 일때문에 정신도 없고 시간도 없고.. 하루가 시간이 너무 부족하다
                     오늘은 그래도 해질무렵에 퇴근을해서 지금까지 회의를 하다가 끝났다
@@ -1597,16 +1545,18 @@ export default {
                     염치없지만..
                     내 옆에 있어서줘서 고마워
                     이은진 널 좋아해`
-                },
+                }
             ]
         };
     },
     methods: {
         navigator() {
             var sct = this.$refs.scrollWrap.scrollTop;
-            var scrollHeight = this.$refs.scrollWrap.scrollHeight - this.$refs.scrollWrap.clientHeight
-            var result = (sct / scrollHeight) * 100
-            this.gauge = result
+            var scrollHeight =
+                this.$refs.scrollWrap.scrollHeight -
+                this.$refs.scrollWrap.clientHeight;
+            var result = (sct / scrollHeight) * 100;
+            this.gauge = result;
         },
         goDay(idx) {
             this.posTop = this.$refs.forList[idx].offsetTop - 60;
@@ -1629,7 +1579,6 @@ export default {
             setTimeout(() => {
                 this.isToggle = idx;
             }, 400);
-            
         },
         goContent() {
             this.goPage = 1;
@@ -1657,6 +1606,7 @@ export default {
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap");
+
 * {
     color: #000;
     text-decoration: none;
@@ -1672,13 +1622,16 @@ export default {
     box-sizing: border-box;
     transition: all 0.2s;
 }
+
 .start,
 .end {
     position: relative;
     height: 100vh;
+
     @supports (-webkit-touch-callout: none) {
         height: -webkit-fill-available;
     }
+
     h3 {
         position: absolute;
         top: 50%;
@@ -1690,16 +1643,20 @@ export default {
         text-align: center;
     }
 }
+
 .section {
     position: relative;
 }
+
 .container {
     height: 100vh;
     padding-top: 50px;
     overflow-y: auto;
+
     @supports (-webkit-touch-callout: none) {
         height: -webkit-fill-available;
     }
+
     .controler {
         position: absolute;
         top: 0;
@@ -1709,6 +1666,7 @@ export default {
         z-index: 9;
         background: #fff;
         border-bottom: 1px solid;
+
         .page-gauge {
             .gauge {
                 width: 1%;
@@ -1716,10 +1674,12 @@ export default {
                 background: #000;
             }
         }
+
         .control-wrap {
             overflow-x: auto;
             overflow-y: hidden;
             white-space: nowrap;
+
             li {
                 display: inline-block;
                 position: relative;
@@ -1727,15 +1687,18 @@ export default {
                 margin: 0 20px;
                 box-shadow: none;
                 vertical-align: middle;
+
                 &:last-child {
                     margin-bottom: 0;
                 }
+
                 &:active {
                     span {
                         font-size: 30px;
                         color: #aaa;
                     }
                 }
+
                 span {
                     font-family: "Gamja Flower", cursive;
                     font-size: 25px;
@@ -1743,14 +1706,16 @@ export default {
                     line-height: 46px;
                     vertical-align: middle;
                     transition: all 0.1s;
+
                     &:after {
-                        content: '♥';
+                        content: "♥";
                         color: red;
                     }
                 }
             }
         }
     }
+
     .go-btn {
         position: absolute;
         left: 10px;
@@ -1761,38 +1726,46 @@ export default {
         background: #aaa;
         box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 50%);
         z-index: 9;
+
         &:after {
-            content: '';
+            content: "";
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%,-50%) rotate(-135deg);
+            transform: translate(-50%, -50%) rotate(-135deg);
             border: solid #fff;
             border-width: 0 5px 5px 0;
             padding: 6px;
             margin-top: 3px;
         }
+
         &:active {
             transform: scale(1.2);
         }
     }
+
     .bottom-btn {
         position: absolute;
         left: 70px;
+
         &:after {
-            transform: translate(-50%,-50%) rotate(45deg);
+            transform: translate(-50%, -50%) rotate(45deg);
             margin-top: -3px;
         }
     }
+
     li {
         margin: 10px 20px;
         border-radius: 5px;
         box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 50%);
+
         .end-point {
             display: none;
         }
+
         &:last-child {
             margin-bottom: 70px;
+
             .end-point {
                 display: block;
                 font-size: 30px;
@@ -1801,17 +1774,22 @@ export default {
                 font-family: "Gamja Flower", cursive;
             }
         }
+
         &.active {
             margin: 10px;
+
             .title-wrap {
                 height: 80px;
+
                 &:after {
                     width: 90%;
                 }
+
                 .date {
                     font-size: 35px;
                 }
             }
+
             .content-wrap {
                 height: auto;
                 padding: 30px 20px;
@@ -1819,11 +1797,13 @@ export default {
             }
         }
     }
+
     .title-wrap {
         position: relative;
         padding: 20px;
         font-family: "Gamja Flower", cursive;
         cursor: pointer;
+
         &:after {
             content: "";
             display: block;
@@ -1836,9 +1816,11 @@ export default {
             background: #000;
             transition: all 0.2s;
         }
+
         .date {
             font-size: 25px;
         }
+
         .during {
             position: absolute;
             top: 50%;
@@ -1847,12 +1829,15 @@ export default {
             font-size: 25px;
         }
     }
+
     .content-wrap {
         height: 0;
         overflow: hidden;
+
         .img-wrap {
             overflow: hidden;
             padding-bottom: 30px;
+
             li {
                 float: left;
                 position: relative;
@@ -1863,6 +1848,7 @@ export default {
                 box-shadow: none;
                 margin-bottom: 5px;
                 margin-right: 5px;
+
                 img {
                     position: absolute;
                     top: 50%;
@@ -1873,6 +1859,7 @@ export default {
                 }
             }
         }
+
         .text {
             display: table;
             table-layout: fixed;
@@ -1880,7 +1867,7 @@ export default {
             font-size: 18px;
             line-height: 1.5;
             white-space: pre-line;
-            font-family: 'Apple SD Gothic Neo',arial,sans-serif;
+            font-family: "Apple SD Gothic Neo", arial, sans-serif;
         }
     }
 }
